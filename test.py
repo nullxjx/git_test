@@ -48,7 +48,7 @@ class DataEvaluation:
         data_evaluation_id = self.client.create_data_evaluation(
             task_id, dataset_id, self.data_patch_id, self.proportion, self.name, self.creator, description
         )
-        print("创建一个新的data_evaluation, new data_evaluation_id: {}, description: {}".format(data_evaluation_id,
+        print("创建一个evaluation, new data_evaluation_id: {}, description: {}".format(data_evaluation_id,
                                                                                                 description))
         self.data_evaluation_id = data_evaluation_id
         return data_evaluation_id
@@ -74,7 +74,6 @@ class DataEvaluation:
         processed_rows = []
         print("该patch中共 {} 条数据行".format(len(data_patch_rows)))
         if len(data_patch_rows) == 0:
-            print("patch {} 中不存在数据行，退出执行".format(self.data_patch_id))
             return
         for i in tqdm(range(len(data_patch_rows))):
             content = self.convert(data_patch_rows[i]['content'])
@@ -95,6 +94,7 @@ class DataEvaluation:
 
     def do_evaluation(self, evaluation_func):
         print("开始执行评估，共有 {} 条数据参与评估...".format(len(self.data_patch_rows_for_evaluation)))
+        print("heehdahsdfa")
         data_evaluation_result_list = evaluation_func(self.data_patch_rows_for_evaluation)
 
         if len(self.data_patch_rows_for_evaluation) != len(data_evaluation_result_list):

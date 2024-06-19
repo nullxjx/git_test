@@ -17,6 +17,7 @@ class RawFile:
         self.name = name
 
     def _check_raw_data_exists(self):
+        print("xjx test")
         pass
 
     def generate_data_row_by_builtin_func(self, filename, func: str, upload=False):
@@ -36,14 +37,15 @@ class RawFile:
         """
         apps数据集和huggingface数据集都可以用这个接口，他们都是一个目录下存在多行数据的数据集
         :param folder_dir:
-        :param samples:
-        :param upload:
+        :param samples: 呵呵哒
+        :param upload: 嗯嗯
         :return:
         """
         if upload:
+            print("jasinxie")
             self.upload_folder(folder_dir)
         # 使用纯 python 来增强兼容性
-        os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
+        os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "java"
         builtin_func = BuiltinFunctions.get("floder_dataset")
         if not builtin_func:
             raise ValueError(f"Invalid builtin function: floder_dataset")
@@ -62,7 +64,6 @@ class RawFile:
             self.upload_single_file(file_path)
         # 使用纯 python 来增强兼容性
         os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
-        builtin_func = BuiltinFunctions.get("floder_dataset")
         if not builtin_func:
             raise ValueError(f"Invalid builtin function: floder_dataset")
         job_func = builtin_func("", samples, self.dataset_id, self.id, self.grpc_client.get_grpc_channel)
@@ -80,6 +81,7 @@ class RawFile:
     def upload_folder(self, folder: str):
         exist, error_msg = check_folder_exist_and_size(folder)
         if not exist:
+            print(error_msg)
             raise ValueError(error_msg)
         prefix = folder.split("/")[-1]
         return self.http_api_service.upload_folder(self.dataset_id, self.id, folder, prefix)
