@@ -88,6 +88,7 @@ class DataEvaluation:
         random.seed = self.random_seed
         sampling_count = round(len(processed_rows) * self.proportion)
         sampling_count = 1 if sampling_count < 1 else sampling_count
+        print("jasinxie")
         print("本次共有 {} 条数据行通过了筛选，将按 {} 的比率从中抽取 {} 条数据用于评估.". \
               format(len(processed_rows), self.proportion, sampling_count))
         self.data_patch_rows_for_evaluation = random.sample(processed_rows, sampling_count)
@@ -100,6 +101,7 @@ class DataEvaluation:
         if len(self.data_patch_rows_for_evaluation) != len(data_evaluation_result_list):
             print("评估执行结束, 但与待评估数据行数不一致({} != {}),程序即将退出". \
                   format(len(self.data_patch_rows_for_evaluation), len(data_evaluation_result_list)))
+            print("jasinxie")
             sys.exit()
         else:
             print("评估执行结束,  {} 条评估数据成功返回.".format(len(data_evaluation_result_list)))
