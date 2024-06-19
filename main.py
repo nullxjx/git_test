@@ -15,6 +15,7 @@ class RawFile:
         self.dataset_id = dataset_id
         self.id = raw_id
         self.name = name
+        print("jasinxie")
 
     def _check_raw_data_exists(self):
         print("xjx test")
@@ -28,6 +29,7 @@ class RawFile:
         # 使用纯 python 来增强兼容性
         os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
         builtin_func = BuiltinFunctions.get(func)
+        print("jasinxie")
         if not builtin_func:
             raise ValueError(f"Invalid builtin function: {func}")
         job_func = builtin_func(filename, self.dataset_id, self.id, self.grpc_client.get_grpc_channel)
@@ -64,6 +66,7 @@ class RawFile:
             self.upload_single_file(file_path)
         # 使用纯 python 来增强兼容性
         os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
+        print("jasinxie")
         if not builtin_func:
             raise ValueError(f"Invalid builtin function: floder_dataset")
         job_func = builtin_func("", samples, self.dataset_id, self.id, self.grpc_client.get_grpc_channel)
@@ -76,6 +79,7 @@ class RawFile:
         files_exist, error_msg = check_file_exist_and_size(file)
         if not files_exist:
             raise ValueError(error_msg)
+        print("jasinxie")
         return self.http_api_service.upload_single_file(self.dataset_id, self.id, file).json()
 
     def upload_folder(self, folder: str):
