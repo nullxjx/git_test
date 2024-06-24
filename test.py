@@ -10,6 +10,8 @@ import sys
 from utils.code_analysis import has_syntax_error
 sys.path.append("../utils")
 
+print("jasinxie")
+
 
 class DataEvaluation:
     def __init__(self, client, task_name, dataset_name, data_patch_id, name, proportion, random_seed=13):
