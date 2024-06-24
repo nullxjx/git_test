@@ -5,6 +5,9 @@ import random
 
 qwq	w
 import copy
+asd
+dasda
+asdda
 
 dassd
 import json
