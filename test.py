@@ -18,6 +18,7 @@ class DataEvaluation:
         self.client = client
         self.samples = []
         self.data_evaluation_id = ""
+        print("saS")
 
         self.task_name = task_name
         self.dataset_name = dataset_name
