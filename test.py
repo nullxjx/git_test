@@ -2,39 +2,6 @@ import csv
 from client import Client
 from tqdm import tqdm
 import random
-das
-da
-da
-dsddas
-dasda
-asada
-
-dasd
-dasd
-ads
-qwq	w
-import copy
-asd
-dasda
-asdda
-
-dassd
-import json
-import data_process_pb2_grpc
-
-dasdas
-
-w	qw
-import data_process_pb2
-import sys
-
-dsadas
-
-from utils.code_analysis import has_syntax_error
-
-dasd
-sys.path.append("../utils")
-
 print("jasinxie")
 
 
@@ -48,10 +15,12 @@ class DataEvaluation:
         self.task_name = task_name
         self.dataset_name = dataset_name
         self.data_patch_id = data_patch_id
+        print("dasdas")
 
         self.name = name
         self.proportion = proportion
         self.random_seed = random_seed
+        print("dasd")
         self.creator = "crecanwang"
 
         self.data_patch_rows_for_evaluation = []
