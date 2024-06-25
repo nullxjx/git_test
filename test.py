@@ -2,6 +2,11 @@ import csv
 from client import Client
 from tqdm import tqdm
 import random
+das
+da
+da
+
+
 dasd
 dasd
 ads
