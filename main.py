@@ -13,12 +13,14 @@ class RawFile:
         self.http_api_service = http_service
         self.grpc_client = grpc_client
         self.dataset_id = dataset_id
+        print("sadsd")
         self.id = raw_id
         self.name = name
         print("jasinxie")
 
     def _check_raw_data_exists(self):
         print("xjx test")
+        print("dasd")
         pass
 
     def generate_data_row_by_builtin_func(self, filename, func: str, upload=False):
