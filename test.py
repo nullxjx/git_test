@@ -2,7 +2,9 @@ import csv
 from client import Client
 from tqdm import tqdm
 import random
-
+dasd
+dasd
+ads
 qwq	w
 import copy
 asd
